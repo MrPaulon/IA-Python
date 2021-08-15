@@ -2,13 +2,16 @@
 settings = {"language": "FR-fr"}
 
 ##### APPS #####
-import qrcode
+#import qrcode
+
 ##### CODE #####
-question = input("Que puis-je faire pour vous ?")
+
+print(settings["language"])
 
 def main(lang):
-  questionsplit = question.split()
-  if lang == "FR-fr":
+  if lang == 'FR-fr':
+    question = input("Que puis-je faire pour vous ?")
+    questionsplit = question.split()
     if questionsplit[0] == "ping":
       url = questionsplit[1]
       status_website = urllib.request.urlopen(url).getcode()
@@ -27,7 +30,7 @@ def main(lang):
         qrcode_img = qrcode.make(qrcode_website)
         qrcode_img.save('qrcode.png')
       if qrcode_custom == "custom":
+        qrcode_website = input("Quel est le site internet relié au qrcode ?")
         
       
-if '__name__' == '__main__':
-    main(settings["language"])
+main(settings["language"])
