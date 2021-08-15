@@ -1,5 +1,5 @@
-##### SETTINGS #####
-settings = {"language": "FR-fr"}
+import settings
+from settings import *
 
 ##### APPS #####
 #import qrcode
