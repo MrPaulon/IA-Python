@@ -1,9 +1,7 @@
 import settings
 from settings import *
-
-##### APPS #####
-#import qrcode
-
+import qrcode
+from qrcode import *
 ##### CODE #####
 
 print(settings["language"])
