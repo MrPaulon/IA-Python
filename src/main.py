@@ -1,5 +1,7 @@
 import settings
 from settings import *
+import os
+from os import *
 import qrcode
 from qrcode import *
 ##### CODE #####
@@ -11,11 +13,9 @@ def main(lang):
     question = input("Que puis-je faire pour vous ?")
     questionsplit = question.split()
     if questionsplit[0] == "ping":
-      url = questionsplit[1]
-      status_website = urllib.request.urlopen(url).getcode()
-      website_is_up = status_website == 200
-      print(website_is_up)
-      question = input("Que puis-je faire pour vous ?")
+      ping_website = questionsplit[0] + " " + questionsplit[1]
+      os.system(ping_website)
+      return
     if questionsplit[0] == "Crée" and questionsplit[1] == "raccourci":
       name_shortcut = input("Quel nom voulez vous donnez à votre raccourci ?")
       website_shortcut = input("Quelle est l'adresse du site de votre raccourci ?")
