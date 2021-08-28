@@ -30,5 +30,4 @@ if lang == 'FR-fr':
       qrcode_website = input("Quel est le site internet relié au qrcode ?")
   if questionsplit[0] == "Etat" and questionsplit[1] == "réseaux":
     os.system("ipconfig")
-      
-main(settings["language"])
+
